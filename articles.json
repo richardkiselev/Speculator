@@ -18,12 +18,12 @@
     "thumbnail": "https://th.bing.com/th/id/OIP.rFgprofX4u5ufpoGjHIGFwHaEK?w=248&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
   },
   {
-    "id": "ededddededs-reform",
-    "title": "TEST",
+    "id": "test-article",
+    "title": "TEST ARTICLE",
     "section": "Politics",
     "date": "Nov 3, 2025",
-    "description": "New measures to stabilize post-collapse markets have divided the Presidium.",
-    "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas iaculis massa nisl",
+    "description": "Lorem ipsum placeholder article.",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, sapien at convallis cursus, elit lorem scelerisque erat, nec scelerisque neque nisi at urna.",
     "thumbnail": "https://th.bing.com/th/id/OIP.rFgprofX4u5ufpoGjHIGFwHaEK?w=248&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
   }
 ]
