@@ -1,0 +1,20 @@
+[
+  {
+    "id": "nuclear-reactor",
+    "title": "Nuclear Reactor on the Moon",
+    "section": "Science",
+    "date": "Nov 2, 2025",
+    "description": "Lunar dust and fission: the next frontier.",
+    "content": "A detailed discussion of how the Soviet lunar base utilized molten-salt reactors to power early mining outposts.",
+    "thumbnail": "https://cdn.britannica.com/97/102097-050-1D7987E3/core-nuclear-reactor.jpg"
+  },
+  {
+    "id": "politics-reform",
+    "title": "Economic Reform Sparks Debate",
+    "section": "Politics",
+    "date": "Nov 3, 2025",
+    "description": "New measures to stabilize post-collapse markets have divided the Presidium.",
+    "content": "Leaked documents suggest internal conflicts among high-ranking officials over the implementation of rationing systems.",
+    "thumbnail": "https://th.bing.com/th/id/OIP.rFgprofX4u5ufpoGjHIGFwHaEK?w=248&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+  }
+]

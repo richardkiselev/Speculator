@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Article | The Stuyvesant Speculator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <a href="index.html">← Back to headlines</a>
+</header>
+
+<main>
+  <article id="content"></article>
+</main>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+
+fetch('articles.json')
+  .then(response => response.json())
+  .then(data => {
+    const article = data.find(a => a.id === id);
+    const container = document.getElementById('content');
+    if (article) {
+      container.innerHTML = `
+        <h1>${article.title}</h1>
+        <p><em>${article.section} — ${article.date}</em></p>
+        <p>${article.content}</p>
+      `;
+    } else {
+      container.innerHTML = '<p>Article not found.</p>';
+    }
+  });
+</script>
+</body>
+</html>
