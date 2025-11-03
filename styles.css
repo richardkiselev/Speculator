@@ -27,9 +27,8 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  margin-top: 30px;
+  padding: 20px;
 }
-
 .article-preview {
   border: 1px solid #ccc;
   padding: 15px;
@@ -55,8 +54,16 @@ button:hover {
 
 .article-thumb {
   width: 100%;
-  height: 120px; /* or whatever height fits your grid */
+  height: 150px;
   object-fit: cover;
   margin-bottom: 10px;
-  border-radius: 4px;
 }
+
+.article-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+
