@@ -10,7 +10,7 @@ fetch('./articles.json')
         <h2>${article.title}</h2>
         <p><em>${article.section} — ${article.date}</em></p>
         <p>${article.description}</p>
-        <button onclick="alert('${article.content}')">Read full article</button>
+        <a href="article.html?id=${article.id}" class="read-button">Read full article</a>
       `;
       container.appendChild(div);
     });
