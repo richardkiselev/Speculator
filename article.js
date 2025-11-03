@@ -15,7 +15,7 @@ fetch('./articles.json')
     container.innerHTML = `
       <h1>${article.title}</h1>
       <p><em>${article.section} — ${article.date}</em></p>
-      <img src="${article.thumbnail}" alt="${article.title}" style="width:100%; max-height:300px; object-fit:cover; margin-bottom:20px;">
+      <img src="${article.thumbnail}" alt="${article.title}" style="width:100%; max-height:150px; object-fit:cover; margin-bottom:20px;">
       <p>${article.content}</p>
     `;
   })
