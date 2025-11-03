@@ -1,4 +1,3 @@
-// Get article ID from URL
 const params = new URLSearchParams(window.location.search);
 const articleId = params.get('id');
 
