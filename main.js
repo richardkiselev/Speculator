@@ -1,18 +1,28 @@
-fetch('./articles.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('articles-grid');
-    data.forEach(article => {
-      const div = document.createElement('div');
-      div.className = 'article-card';
-      div.innerHTML = `
-        <img src="${article.thumbnail}" alt="${article.title}" class="article-thumb">
-        <h2>${article.title}</h2>
-        <p><em>${article.section} — ${article.date}</em></p>
-        <p>${article.description}</p>
-        <a href="article.html?id=${article.id}" class="read-button">Read full article</a>
-      `;
-      container.appendChild(div);
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("articles.json")
+    .then(response => response.json())
+    .then(articles => {
+      const container = document.getElementById("articles");
+      container.innerHTML = ""; // clear placeholder
+
+      articles.forEach(article => {
+        // Create article card
+        const card = document.createElement("div");
+        card.classList.add("article-card");
+
+        card.innerHTML = `
+          <img src="${article.thumbnail}" alt="${article.title}" class="article-thumb">
+          <div class="article-text">
+            <h3><a href="article.html?id=${article.id}">${article.title}</a></h3>
+            <p class="meta">${article.date} | ${article.author}</p>
+            <p>${article.description}</p>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error("Error loading articles:", error);
+      document.getElementById("articles").innerHTML = "<p>Failed to load articles.</p>";
     });
-  })
-  .catch(err => console.error(err));
+});
