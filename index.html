@@ -6,6 +6,36 @@
     <title>The Stuyvesant Speculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+    <script>
+async function loadArticles() {
+  try {
+    const res = await fetch('articles.json');
+    const data = await res.json();
+    const container = document.getElementById('articles');
+    container.innerHTML = '';
+
+    data.forEach(article => {
+      const el = document.createElement('div');
+      el.className = 'article';
+      el.innerHTML = `
+        <img src="${article.thumbnail}" alt="${article.title}" class="thumbnail">
+        <div class="article-text">
+          <h3>${article.title}</h3>
+          <p class="meta">${article.author} | ${article.date}</p>
+          <p>${article.description}</p>
+          <a href="article.html?id=${article.id}" class="read-more">Read More →</a>
+        </div>
+      `;
+      container.appendChild(el);
+    });
+  } catch (err) {
+    console.error("Error loading articles:", err);
+  }
+}
+
+loadArticles();
+</script>
+
 <body>
     <!-- Navigation Bar -->
     <header class="navbar">
@@ -28,6 +58,7 @@
         <section class="content">
             <h2>Latest Issue</h2>
             <p>Welcome to <strong>The Stuyvesant Speculator</strong> — your #1 source for completely <s>fabricated</s> factual news at Stuyvesant High School.</p>
+            <section id="articles" class="articles"></section>
         </section>
     </main>
 
