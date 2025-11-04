@@ -38,13 +38,14 @@ body {
 }
 
 /* Logo */
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 25vh;
-    margin-top: 1rem;
+.logo-container img {
+    max-width: 700px;
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
+
 
 .logo-container img {
     max-width: 350px;
