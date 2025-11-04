@@ -40,11 +40,12 @@ body {
 /* Logo */
 .logo-container img {
     display: block;
-    margin: 0 auto 1rem auto; /* add bottom margin */
-    width: 600px;       /* Make the logo big on desktop */
-    max-width: 90%;     /* Responsive on smaller screens */
+    margin: 1rem auto;    /* space above/below */
+    width: 500px;         /* bigger main logo */
+    max-width: 95%;       /* responsive on smaller screens */
     height: auto;
 }
+
 
 /* Headline + Tagline */
 .headline {
