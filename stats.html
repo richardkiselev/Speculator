@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speculator Stats</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-family: "Georgia", serif;
+    }
+    h1 { text-align: center; color: #b22222; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    th { background-color: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>📊 Speculator Stats</h1>
+    <p>Total Words: <span id="total-words">0</span></p>
+    <p>Total Articles: <span id="total-articles">0</span></p>
+    <p>Total Authors: <span id="total-authors">0</span></p>
+
+    <h2>Author Leaderboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Author</th>
+          <th>Articles Written</th>
+          <th>Word Count</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard"></tbody>
+    </table>
+
+    <p><a href="index.html">← Back to Home</a></p>
+  </main>
+
+  <script>
+    fetch('articles.json')
+      .then(response => response.json())
+      .then(articles => {
+        let totalWords = 0;
+        const authors = {};
+
+        articles.forEach(article => {
+          totalWords += article.wordCount || 0;
+          if (authors[article.author]) {
+            authors[article.author].articles += 1;
+            authors[article.author].words += article.wordCount || 0;
+          } else {
+            authors[article.author] = { articles: 1, words: article.wordCount || 0 };
+          }
+        });
+
+        document.getElementById('total-words').textContent = totalWords;
+        document.getElementById('total-articles').textContent = articles.length;
+        document.getElementById('total-authors').textContent = Object.keys(authors).length;
+
+        // Build leaderboard
+        const leaderboard = document.getElementById('leaderboard');
+        const sortedAuthors = Object.entries(authors)
+          .sort((a,b) => b[1].words - a[1].words);
+
+        sortedAuthors.forEach(([author, data]) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${author}</td><td>${data.articles}</td><td>${data.words}</td>`;
+          leaderboard.appendChild(tr);
+        });
+      })
+      .catch(err => console.error('Error loading stats:', err));
+  </script>
+</body>
+</html>
