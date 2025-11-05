@@ -27,6 +27,13 @@
       text-align: left;
     }
     th { background-color: #f0f0f0; }
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #b22222;
+    }
+    .back-link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -48,7 +55,7 @@
       <tbody id="leaderboard"></tbody>
     </table>
 
-    <p><a href="index.html">← Back to Home</a></p>
+    <p><a href="index.html" class="back-link">← Back to Home</a></p>
   </main>
 
   <script>
@@ -59,12 +66,15 @@
         const authors = {};
 
         articles.forEach(article => {
-          totalWords += article.wordCount || 0;
+          // Ensure wordCount is a number
+          const count = Number(article.wordCount) || 0;
+          totalWords += count;
+
           if (authors[article.author]) {
             authors[article.author].articles += 1;
-            authors[article.author].words += article.wordCount || 0;
+            authors[article.author].words += count;
           } else {
-            authors[article.author] = { articles: 1, words: article.wordCount || 0 };
+            authors[article.author] = { articles: 1, words: count };
           }
         });
 
@@ -72,10 +82,10 @@
         document.getElementById('total-articles').textContent = articles.length;
         document.getElementById('total-authors').textContent = Object.keys(authors).length;
 
-        // Build leaderboard
+        // Build leaderboard sorted by word count descending
         const leaderboard = document.getElementById('leaderboard');
         const sortedAuthors = Object.entries(authors)
-          .sort((a,b) => b[1].words - a[1].words);
+          .sort((a, b) => b[1].words - a[1].words);
 
         sortedAuthors.forEach(([author, data]) => {
           const tr = document.createElement('tr');
