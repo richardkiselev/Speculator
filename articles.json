@@ -119,7 +119,16 @@
     "thumbnail": "https://example.com/censorship.jpg",
     "content": "[THIS ARTICLE WAS BLOCKED BY THE NYC DEPARTMENT OF EDUCATION]"
   },
-  {
+   {
     "id": "stress-free-classes-tiktok",
     "title": "Stuyvesant Introduces 'Stress-Free' Classes Taught By TikTok Influencers",
-   
+    "section": "Education",
+    "date": "December 3, 2025",
+    "issue": "Holiday Edition | Issue #3",
+    "author": "Bendova Babi",
+    "wordCount": 215,
+    "description": "Principal Yu introduces influencer-led 'stress-free' classes at Stuyvesant High School.",
+    "thumbnail": "https://example.com/tiktok-classes.jpg",
+    "content": "<p>The recent student burnout that resulted in more than a hundred students getting sent to a psychiatric hospital has taken the world of school-related social media (Instagram, TikTok, Reddit, etc.) by storm. Rumors have increasingly circulated around Stuyvesant’s impact on students physically and emotionally, hurting its reputation.</p><p>To “counter and restore Stuyvesant to its former glory”, Principal Yu has officially introduced “stress-free” classes to be phased in “sometime in 2026”. These classes will be held by online influencers and Stuy alumni that became influencers on popular social media platforms, notably TikTok, the video-sharing platform with around 2 billion active users. Students will master not only doomscrolling and Gen beta brainrot/slang, but will learn to become influencers themselves. During the classes, students are allowed to violate the cell phone/device policy either for 'educational' purposes or for 'surfing the web, isn’t that what kids are doing nowadays'.</p><p>“The next generation is cooked anyways, so let them boil,” Principal Yu said. People speculate if Principal Yu truly wants to make a change or if he’s just trying to save his reputation as 'Stuyvesant’s Coolest Principal of 2025'.</p>"
+  }
+]
